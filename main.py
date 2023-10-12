@@ -58,7 +58,7 @@ async def prediction_game():
         await message.add_reaction('❌')
         await message.add_reaction('2️⃣')
         start_time = match_time + datetime.timedelta(minutes=1)
-        end_time = match_time + datetime.timedelta(minutes=(130+additional_time))
+        end_time = match_time + datetime.timedelta(minutes=(160+additional_time))
         asyncio.create_task(remove_reactions_at_start(message, start_time))
         asyncio.create_task(get_match_results(match_id,match_info,end_time))
     await update_google_sheet_matches(this_week_matches)
